@@ -1,6 +1,6 @@
 export interface PackageSummary {
-    name: string;
-    version: string;
-    description: string;
-    keywords: string[];
+	name: string;
+	version: string;
+	description: string;
+	keywords?: string[];
 }
