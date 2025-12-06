@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# React Package Registry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a package registry application built with React, TypeScript, Vite, and RTK Query. It allows users to search for packages, view package details, and explore featured packages. The project demonstrates modern React patterns, efficient data fetching with RTK Query, and a clean, component-based architecture.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Search Packages**: Search for packages using a search input with debounced queries.
+- **View Package Details**: See detailed information about each package, including description, version, and more.
+- **Featured Packages**: Explore a curated list of featured packages on the home page.
+- **API Integration**: Uses RTK Query for efficient data fetching and caching.
+- **TypeScript Types**: Strongly typed API responses and components.
+- **Modern React**: Built with functional components and hooks.
+- **Vite**: Fast development and build tooling.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: For building the user interface.
+- **TypeScript**: For static type checking.
+- **RTK Query**: For API integration and caching.
+- **Vite**: For fast development and build tooling.
+- **ESLint**: For code quality and linting.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **src/api/queries**: Contains RTK Query endpoints for fetching package data.
+- **src/api/types**: TypeScript types for API responses.
+- **src/components**: Reusable UI components such as `Header`, `PackageListItem`, and `SearchInput`.
+- **src/pages**: Page components for Home, Search, and Details views, each with their own data loaders.
+- **src/assets**: Static assets (images, icons, etc.).
+- **src/index.css**: Global styles.
+- **public/**: Static files served by Vite.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd registry
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open the application in your browser at `http://localhost:5173` (default Vite port).
+
+## Scripts
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run preview`: Previews the production build.
+- `npm run lint`: Runs ESLint to check for code quality.
+
+## License
+
+This project is licensed under the MIT License.
